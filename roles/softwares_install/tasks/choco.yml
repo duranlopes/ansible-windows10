@@ -1,0 +1,15 @@
+---
+- name: Chocolatey install
+  win_shell: Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+- name: Chocolatey desabilitando enhanced exit codes
+  win_chocolatey_feature:
+    name: useEnhancedExitCodes
+    state: disabled
+
+- name: Chocolatey install packages
+  win_chocolatey:
+    name: "{{ item }}"
+    state: latest
+  loop:
+    - "{{ softwares }}"

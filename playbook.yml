@@ -1,0 +1,4 @@
+- name: Default Playbook Windows
+  hosts: windows
+  roles:
+    - softwares_install

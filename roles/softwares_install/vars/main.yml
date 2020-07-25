@@ -1,0 +1,10 @@
+---
+# vars file for softwares_install
+local_path: "C:\\ansible_wu.txt"
+softwares: 
+    - python
+    - git
+    - putty
+    - firefox
+    - vscode 
+    

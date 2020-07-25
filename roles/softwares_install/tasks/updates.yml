@@ -1,0 +1,9 @@
+---
+- name: Install all critical and security updates
+  win_updates:
+    category_names:
+    - CriticalUpdates
+    - SecurityUpdates
+    state: installed
+    log_path: "{{ local_path }}"
+  register: update_result

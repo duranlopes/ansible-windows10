@@ -1,0 +1,9 @@
+---
+# tasks file for softwares_install
+- import_tasks: choco.yml
+  when: choco_install | bool
+  tags: choco
+
+- import_tasks: updates.yml
+  when: updates_install | bool
+  tags: updates
